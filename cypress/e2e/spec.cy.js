@@ -8,7 +8,6 @@ describe ('Zigzag Page', () => {
       cy.get('#search').type('Dyson')
       cy.get('#search_mini_form').find('[aria-label="Search"]').click();
   
-      // cy.contains("Որոնման արդյունքները 'Dyson' -ի համար").should('be.visible');
       cy.get(".section_title").contains("Որոնման արդյունքները 'Dyson' -ի համար")
     })
   })
@@ -33,7 +32,7 @@ describe ('Zigzag Page', () => {
   
       cy.wait(5000);
   
-      cy.get(".user_email").contains("yana_azaryan@edu.aua.am")
+      cy.url().should('include', 'customer/account/')
     })
   })
 })
